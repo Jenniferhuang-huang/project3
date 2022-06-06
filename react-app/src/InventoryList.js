@@ -66,7 +66,7 @@ class InventoryList extends Component {
                 size="sm"
                 color="danger"
                 tag={Link}
-                onClike={() => this.removeInv(inventory._id)}
+                onClick={() => this.removeInv(inventory._id)}
               >
                 Delete
               </Button>
