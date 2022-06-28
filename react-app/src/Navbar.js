@@ -10,9 +10,22 @@ export default class AppNavbar extends Component {
 
   render() {
     return (
-      <Navbar className="navbar-dark bg-dark px-5" expand="md">
+      <Navbar
+        className="nav navbar-dark px-5 d-flex justify-content-center"
+        expand="md"
+      >
         <NavbarBrand tag={Link} to="/">
-          Home
+          <p className="navtitle mt-4 text-black d-flex justify-content-center">
+            <img
+              className="logo d-flex justify-content-center"
+              src="/logo.png"
+              alt="Girl in a jacket"
+              width="100"
+              height="100"
+            ></img>
+            <h2 className="appname">HR Management</h2>
+          </p>
+          <br></br>
         </NavbarBrand>
       </Navbar>
     );

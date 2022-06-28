@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.form {
+  background-color: white;
+  border-radius: 5px;
+  width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.form-body {
+  text-align: left;
+  padding: 20px 10px;
+}
+
+.form-body > * {
+  padding: 5px;
+}
+
+.form__label {
+  width: 40%;
+}
+
+.form_input {
+  width: 60%;
+}
+
+.footer {
+  text-align: center;
+}
+
+.appname {
+  padding-top: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.nav {
+  text-align: center;
+}
+.card-body {
+  background-color: lightskyblue;
+}
+.listform {
+  background-color: cornsilk;
+}
+
+#root {
+  background-image: url("/public/NewYork.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}

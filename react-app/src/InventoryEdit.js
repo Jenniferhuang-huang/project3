@@ -56,17 +56,19 @@ class InventoryEdit extends Component {
   render() {
     const { item } = this.state;
     const title = (
-      <h2 className="mt-3">{item._id ? "Edit Inventory" : "Add Inventory"}</h2>
+      <h2 className="m-5 d-flex justify-content-center">
+        {item._id ? "Edit Employee" : "Add Employee"}
+      </h2>
     );
     return (
       <div>
         <AppNavbar />
         <Container>
           {title}
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit} className="listform">
             <FormGroup>
               <Label for="prodname" className="h5 mt-3">
-                Product Name
+                Name
               </Label>
               <Input
                 type="text"
@@ -79,7 +81,7 @@ class InventoryEdit extends Component {
             </FormGroup>
             <FormGroup>
               <Label for="qty" className="h5 mt-3">
-                Quantity
+                Work Hours/Week
               </Label>
               <Input
                 type="text"
@@ -92,7 +94,7 @@ class InventoryEdit extends Component {
             </FormGroup>
             <FormGroup>
               <Label for="price" className="h5 mt-3">
-                Price
+                Hourly Wage($)
               </Label>
               <Input
                 type="text"
@@ -105,7 +107,7 @@ class InventoryEdit extends Component {
             </FormGroup>
             <FormGroup>
               <Label for="status" className="h5 mt-3">
-                Status
+                Current Status
               </Label>
               <Input
                 type="text"
@@ -117,11 +119,11 @@ class InventoryEdit extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Button color="primary" type="submit" className="mt-3">
+              <Button color="outline-primary" type="submit" className="mt-3">
                 Save
               </Button>{" "}
               <Button
-                color="secondary"
+                color="outline-secondary"
                 className="mt-3"
                 tag={Link}
                 to="/inventories"

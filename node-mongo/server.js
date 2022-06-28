@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 require("./app/models/inventory.model.js");
+
 
 // Configuring the database
 require("dotenv").config();

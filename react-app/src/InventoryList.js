@@ -48,15 +48,18 @@ class InventoryList extends Component {
     const inventoryList = inventories.map((inventory) => {
       return (
         <tr key={inventory._id}>
-          <td style={{ whiteSpace: "nowrap" }}>{inventory.prodname}</td>
+          <td style={{ whiteSpace: "nowrap" }}>
+            {inventory.prodname}
+          </td>
           <td>{inventory.qty}</td>
           <td>{inventory.price}</td>
           <td>{inventory.status}</td>
           <td>
             <ButtonGroup>
               <Button
+                className="btn-outline-primary"
                 size="sm"
-                color="primary"
+                color=""
                 tag={Link}
                 to={"/inventories/" + inventory._id}
               >
@@ -64,7 +67,8 @@ class InventoryList extends Component {
               </Button>
               <Button
                 size="sm"
-                color="danger"
+                className="btn-outline-danger"
+                color=""
                 tag={Link}
                 onClick={() => this.removeInv(inventory._id)}
               >
@@ -80,29 +84,42 @@ class InventoryList extends Component {
       <div>
         <AppNavbar />
         <Container fluid>
-          <div className="float-right">
-            <Button
-              color="success"
-              className="my-4"
-              tag={Link}
-              to="/inventories/new"
-            >
-              Add inventory
-            </Button>
-          </div>
-          <h3>Inventory List</h3>
-          <Table className="mt-4">
+          <h3 className="formtitle m-5 d-flex justify-content-center">
+            Employee List
+          </h3>
+
+          <Table responsive className="mt-4 listform">
             <thead>
               <tr>
-                <th width="20%">Product Name</th>
-                <th width="15%">Quantity</th>
-                <th width="15%">Price</th>
-                <th width="15%">Status</th>
-                <th width="15%">Actions</th>
+                <th  width="20%">
+                  Name
+                </th>
+                <th width="15%">
+                  Work Hours/Week
+                </th>
+                <th width="15%">
+                  Hourly Wage($)
+                </th>
+                <th width="15%">
+                  Current Status
+                </th>
+                <th width="15%">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody>{inventoryList}</tbody>
           </Table>
+          <div className="float-left">
+            <Button
+              color="primary"
+              className="my-4"
+              tag={Link}
+              to="/inventories/new"
+            >
+              Add Employee
+            </Button>
+          </div>
         </Container>
       </div>
     );
